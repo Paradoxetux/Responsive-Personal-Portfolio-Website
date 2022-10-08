@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ekrem Taha Unlu Personal Website</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <nav class="menu">
+        <div class="logo">
+          <h2>Hoş<span>Geldiniz</span></h2>
+        </div>
+
+        <ul>
+          <li>
+            <a href="#" class="active" onclick="markMenuItem(this)"
+              >Ana Sayfa</a
+            >
+          </li>
+          <li><a href="#" onclick="markMenuItem(this)">Hakkında</a></li>
+          <li><a href="#" onclick="markMenuItem(this)">Portfolyo</a></li>
+          <li><a href="#" onclick="markMenuItem(this)">İletişim</a></li>
+        </ul>
+
+        <div id="menuBtn">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </nav>
+
+      <main>
+        <section class="infoText">
+          <p>Merhaba, Benim Adım</p>
+          <h1>Ekrem Taha<span>Ünlü</span></h1>
+          <p>Web Geliştirici ve Müzisyen</p>
+          <button>
+            <a
+              href="https://drive.google.com/uc?export=download&id=1Rcx4B6iMsz8iYl7PmRXsSOziYMHm9mjh"
+            ></a
+            >CV İndir
+          </button>
+          <div class="socialMediaIcons">
+            <a href="https://www.instagram.com/ekremtahamusic/" target="_blank"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a href="https://twitter.com/ektnll" target="_blank"
+              ><i class="fa-brands fa-twitter"></i
+            ></a>
+            <a href="https://www.youtube.com/c/EkremTahaÜnlü" target="_blank"
+              ><i class="fa-brands fa-youtube"></i
+            ></a>
+            <a href="https://github.com/Paradoxetux" target="_blank"
+              ><i class="fa-brands fa-github"></i
+            ></a>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script type="text/javascript">
+      var menu_btn = document.querySelector("#menuBtn");
+      var menu = document.querySelector(".menu ul");
+      var menuItems = document.querySelectorAll(".menu ul li a");
+
+      menu_btn.addEventListener("click", function () {
+        menu_btn.classList.toggle("active");
+        menu.classList.toggle("active");
+      });
+      for (i = 0; i < menuItems.length; i++) {
+        menuItems[i].addEventListener("click", function () {
+          menu_btn.classList.remove("active");
+          menu.classList.remove("active");
+        });
+      }
+      function markMenuItem(menuItem) {
+        for (var i = 0; i < menuItems.length; i++) {
+          menuItems[i].classList.remove("active");
+        }
+        menuItem.classList.add("active");
+      }
+    </script>
+  </body>
+</html>
